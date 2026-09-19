@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>UzRacer — O'zbek Mashina Yarish O'yini</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Kirish menyusi -->
+  <div id="loginScreen">
+    <div class="panel">
+      <h1>🏁 UzRacer</h1>
+      <p class="subtitle">O'zbekcha real vaqtli mashina yarish o'yini</p>
+      <input id="nameInput" maxlength="16" placeholder="Ismingizni kiriting..." />
+      <button id="playBtn">O'YINGA KIRISH</button>
+      <p class="hint">Boshqarish: W/A/S/D yoki strelkalar &nbsp;•&nbsp; G — Garaj</p>
+    </div>
+  </div>
+
+  <!-- O'yin HUD -->
+  <div id="hud" class="hidden">
+    <div id="speedBox">0 <span>km/soat</span></div>
+    <div id="coinBox">🪙 <span id="coinCount">0</span></div>
+    <div id="playerListBox">
+      <div class="playerListTitle">O'yinchilar</div>
+      <div id="playerList"></div>
+    </div>
+  </div>
+
+  <!-- Garaj paneli -->
+  <div id="garage" class="hidden">
+    <div class="panel">
+      <h2>🚗 Garaj</h2>
+      <div id="carList"></div>
+      <button id="closeGarage">Yopish (G)</button>
+    </div>
+  </div>
+
+  <canvas id="gameCanvas"></canvas>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+      }
+    }
+  </script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
